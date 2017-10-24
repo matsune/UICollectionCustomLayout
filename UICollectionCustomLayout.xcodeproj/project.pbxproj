@@ -8,16 +8,47 @@
 
 /* Begin PBXBuildFile section */
 		130E1CE31F9E1EE3004C3CB9 /* UICollectionCustomLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 130E1CE11F9E1EE3004C3CB9 /* UICollectionCustomLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		130E1D0C1F9E2050004C3CB9 /* UICollectionCustomLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130E1D0B1F9E2050004C3CB9 /* UICollectionCustomLayout.swift */; };
+		130E1D0E1F9E2089004C3CB9 /* UICollectionCustomLayoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130E1D0D1F9E2089004C3CB9 /* UICollectionCustomLayoutDelegate.swift */; };
+		130E1D191F9E22C2004C3CB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130E1D181F9E22C2004C3CB9 /* AppDelegate.swift */; };
+		130E1D1E1F9E22C2004C3CB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 130E1D1C1F9E22C2004C3CB9 /* Main.storyboard */; };
+		130E1D201F9E22C2004C3CB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 130E1D1F1F9E22C2004C3CB9 /* Assets.xcassets */; };
+		130E1D231F9E22C2004C3CB9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 130E1D211F9E22C2004C3CB9 /* LaunchScreen.storyboard */; };
+		130E1D301F9E3320004C3CB9 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130E1D2F1F9E3320004C3CB9 /* CalendarViewController.swift */; };
+		13B2F7451F9F6E71005772BD /* CalendarBackgroundView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B2F7441F9F6E71005772BD /* CalendarBackgroundView.xib */; };
+		13B2F7471F9F6E8E005772BD /* CalendarBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B2F7461F9F6E8E005772BD /* CalendarBackgroundView.swift */; };
+		13B2F74B1F9F7080005772BD /* CalendarDayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B2F74A1F9F7080005772BD /* CalendarDayCell.xib */; };
+		13B2F74D1F9F70A1005772BD /* CalendarDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B2F74C1F9F70A1005772BD /* CalendarDayCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		130E1CDE1F9E1EE3004C3CB9 /* UICollectionCustomLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UICollectionCustomLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		130E1CE11F9E1EE3004C3CB9 /* UICollectionCustomLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UICollectionCustomLayout.h; sourceTree = "<group>"; };
 		130E1CE21F9E1EE3004C3CB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		130E1D0B1F9E2050004C3CB9 /* UICollectionCustomLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionCustomLayout.swift; sourceTree = "<group>"; };
+		130E1D0D1F9E2089004C3CB9 /* UICollectionCustomLayoutDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionCustomLayoutDelegate.swift; sourceTree = "<group>"; };
+		130E1D161F9E22C2004C3CB9 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		130E1D181F9E22C2004C3CB9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		130E1D1D1F9E22C2004C3CB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		130E1D1F1F9E22C2004C3CB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		130E1D221F9E22C2004C3CB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		130E1D241F9E22C2004C3CB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		130E1D2F1F9E3320004C3CB9 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		13B2F7441F9F6E71005772BD /* CalendarBackgroundView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarBackgroundView.xib; sourceTree = "<group>"; };
+		13B2F7461F9F6E8E005772BD /* CalendarBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarBackgroundView.swift; sourceTree = "<group>"; };
+		13B2F74A1F9F7080005772BD /* CalendarDayCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarDayCell.xib; sourceTree = "<group>"; };
+		13B2F74C1F9F70A1005772BD /* CalendarDayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDayCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		130E1CDA1F9E1EE3004C3CB9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		130E1D131F9E22C2004C3CB9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -31,6 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				130E1CE01F9E1EE3004C3CB9 /* UICollectionCustomLayout */,
+				130E1D171F9E22C2004C3CB9 /* Demo */,
 				130E1CDF1F9E1EE3004C3CB9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -39,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				130E1CDE1F9E1EE3004C3CB9 /* UICollectionCustomLayout.framework */,
+				130E1D161F9E22C2004C3CB9 /* Demo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,8 +81,51 @@
 			children = (
 				130E1CE11F9E1EE3004C3CB9 /* UICollectionCustomLayout.h */,
 				130E1CE21F9E1EE3004C3CB9 /* Info.plist */,
+				130E1D0B1F9E2050004C3CB9 /* UICollectionCustomLayout.swift */,
+				130E1D0D1F9E2089004C3CB9 /* UICollectionCustomLayoutDelegate.swift */,
 			);
 			path = UICollectionCustomLayout;
+			sourceTree = "<group>";
+		};
+		130E1D171F9E22C2004C3CB9 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				13B2F7431F9F6E47005772BD /* Calendar */,
+				130E1D241F9E22C2004C3CB9 /* Info.plist */,
+				130E1D181F9E22C2004C3CB9 /* AppDelegate.swift */,
+				130E1D1F1F9E22C2004C3CB9 /* Assets.xcassets */,
+				130E1D211F9E22C2004C3CB9 /* LaunchScreen.storyboard */,
+				130E1D1C1F9E22C2004C3CB9 /* Main.storyboard */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
+		13B2F7431F9F6E47005772BD /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				13B2F7491F9F7062005772BD /* CollectionCell */,
+				13B2F7481F9F703F005772BD /* SupplementaryView */,
+				130E1D2F1F9E3320004C3CB9 /* CalendarViewController.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		13B2F7481F9F703F005772BD /* SupplementaryView */ = {
+			isa = PBXGroup;
+			children = (
+				13B2F7441F9F6E71005772BD /* CalendarBackgroundView.xib */,
+				13B2F7461F9F6E8E005772BD /* CalendarBackgroundView.swift */,
+			);
+			path = SupplementaryView;
+			sourceTree = "<group>";
+		};
+		13B2F7491F9F7062005772BD /* CollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				13B2F74A1F9F7080005772BD /* CalendarDayCell.xib */,
+				13B2F74C1F9F70A1005772BD /* CalendarDayCell.swift */,
+			);
+			path = CollectionCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -84,16 +160,39 @@
 			productReference = 130E1CDE1F9E1EE3004C3CB9 /* UICollectionCustomLayout.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		130E1D151F9E22C2004C3CB9 /* Demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 130E1D271F9E22C2004C3CB9 /* Build configuration list for PBXNativeTarget "Demo" */;
+			buildPhases = (
+				130E1D121F9E22C2004C3CB9 /* Sources */,
+				130E1D131F9E22C2004C3CB9 /* Frameworks */,
+				130E1D141F9E22C2004C3CB9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Demo;
+			productName = Demo;
+			productReference = 130E1D161F9E22C2004C3CB9 /* Demo.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		130E1CD51F9E1EE3004C3CB9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0900;
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = matsune;
 				TargetAttributes = {
 					130E1CDD1F9E1EE3004C3CB9 = {
+						CreatedOnToolsVersion = 9.0.1;
+						LastSwiftMigration = 0900;
+						ProvisioningStyle = Automatic;
+					};
+					130E1D151F9E22C2004C3CB9 = {
 						CreatedOnToolsVersion = 9.0.1;
 						ProvisioningStyle = Automatic;
 					};
@@ -105,6 +204,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 130E1CD41F9E1EE3004C3CB9;
 			productRefGroup = 130E1CDF1F9E1EE3004C3CB9 /* Products */;
@@ -112,6 +212,7 @@
 			projectRoot = "";
 			targets = (
 				130E1CDD1F9E1EE3004C3CB9 /* UICollectionCustomLayout */,
+				130E1D151F9E22C2004C3CB9 /* Demo */,
 			);
 		};
 /* End PBXProject section */
@@ -124,6 +225,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		130E1D141F9E22C2004C3CB9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13B2F7451F9F6E71005772BD /* CalendarBackgroundView.xib in Resources */,
+				130E1D231F9E22C2004C3CB9 /* LaunchScreen.storyboard in Resources */,
+				130E1D201F9E22C2004C3CB9 /* Assets.xcassets in Resources */,
+				130E1D1E1F9E22C2004C3CB9 /* Main.storyboard in Resources */,
+				13B2F74B1F9F7080005772BD /* CalendarDayCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -131,10 +244,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				130E1D0C1F9E2050004C3CB9 /* UICollectionCustomLayout.swift in Sources */,
+				130E1D0E1F9E2089004C3CB9 /* UICollectionCustomLayoutDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		130E1D121F9E22C2004C3CB9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13B2F74D1F9F70A1005772BD /* CalendarDayCell.swift in Sources */,
+				130E1D301F9E3320004C3CB9 /* CalendarViewController.swift in Sources */,
+				13B2F7471F9F6E8E005772BD /* CalendarBackgroundView.swift in Sources */,
+				130E1D191F9E22C2004C3CB9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		130E1D1C1F9E22C2004C3CB9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				130E1D1D1F9E22C2004C3CB9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		130E1D211F9E22C2004C3CB9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				130E1D221F9E22C2004C3CB9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		130E1CE41F9E1EE3004C3CB9 /* Debug */ = {
@@ -253,6 +398,30 @@
 		130E1CE71F9E1EE3004C3CB9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 8G7ZB52773;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = UICollectionCustomLayout/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.matsune.UICollectionCustomLayout;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		130E1CE81F9E1EE3004C3CB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -269,24 +438,33 @@
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
-			name = Debug;
+			name = Release;
 		};
-		130E1CE81F9E1EE3004C3CB9 /* Release */ = {
+		130E1D251F9E22C2004C3CB9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 8G7ZB52773;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = UICollectionCustomLayout/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = co.matsune.UICollectionCustomLayout;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
+				INFOPLIST_FILE = Demo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.matsune.Demo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		130E1D261F9E22C2004C3CB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8G7ZB52773;
+				INFOPLIST_FILE = Demo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.matsune.Demo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -309,6 +487,15 @@
 			buildConfigurations = (
 				130E1CE71F9E1EE3004C3CB9 /* Debug */,
 				130E1CE81F9E1EE3004C3CB9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		130E1D271F9E22C2004C3CB9 /* Build configuration list for PBXNativeTarget "Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				130E1D251F9E22C2004C3CB9 /* Debug */,
+				130E1D261F9E22C2004C3CB9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
