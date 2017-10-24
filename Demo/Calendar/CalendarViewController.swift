@@ -17,8 +17,9 @@ final class CalendarViewController: UIViewController {
     var kindOfItem: String = "DayCell"
     fileprivate let itemReuseIdentifier = "dayCell"
     
-    var kindsOfSupplementary: [String] = ["BackgroundView"]
+    var kindsOfSupplementary: [String] = ["BackgroundView", "WeekView"]
     fileprivate let backgroundReuseIdentifier = "backgroundView"
+    fileprivate let weekReuseIdentifier = "weekView"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +41,9 @@ final class CalendarViewController: UIViewController {
         collectionView.register(UINib(nibName: "CalendarBackgroundView", bundle: nil),
                                 forSupplementaryViewOfKind: kindsOfSupplementary[0],
                                 withReuseIdentifier: backgroundReuseIdentifier)
+        collectionView.register(UINib(nibName: "CalendarWeekView", bundle: nil),
+                                forSupplementaryViewOfKind: kindsOfSupplementary[1],
+                                withReuseIdentifier: weekReuseIdentifier)
         view.addSubview(collectionView)
         view.backgroundColor = .white
     }
@@ -67,6 +71,16 @@ extension CalendarViewController: UICollectionViewDataSource {
             reusableView.backgroundColor = .white
             reusableView.monthLabel.text = "\(indexPath.section + 1)"
             return reusableView
+        case kindsOfSupplementary[1]:
+            guard let reusableView = collectionView
+                .dequeueReusableSupplementaryView(ofKind: kind,
+                                                  withReuseIdentifier: weekReuseIdentifier,
+                                                  for: indexPath) as? CalendarWeekView else {
+                                                    fatalError()
+            }
+            reusableView.backgroundColor = .gray
+            reusableView.weekdayLabel.text = "\(Calendar.current.shortWeekdaySymbols[indexPath.row])"
+            return reusableView
         default:
             return UICollectionReusableView()
         }
@@ -84,14 +98,16 @@ extension CalendarViewController: UICollectionViewDataSource {
 extension CalendarViewController: UICollectionCustomLayoutDelegate {
     
     func collectionView(_ collectionView: UICollectionView, rectForCellOfKind kind: String, at indexPath: IndexPath) -> CGRect {
+        let weekdayViewHeight: CGFloat = 20.0
+        
         switch kind {
         case kindOfItem:
             let dayWidth  = collectionView.bounds.width / 7.0
-            let dayHeight = collectionView.bounds.height / 5.0
+            let dayHeight = (collectionView.bounds.height - weekdayViewHeight) / 5.0
             var x = collectionView.bounds.width * CGFloat(indexPath.section)
             x += CGFloat(indexPath.row % 7) * dayWidth
             let week = CGFloat(indexPath.row / 7)
-            let y = week * CGFloat(dayHeight)
+            let y = week * CGFloat(dayHeight) + weekdayViewHeight
             return CGRect(x: x,
                           y: y,
                           width: dayWidth - 5,
@@ -104,6 +120,14 @@ extension CalendarViewController: UICollectionCustomLayoutDelegate {
                           width: collectionView.bounds.width,
                           height: collectionView.bounds.height)
             
+        case kindsOfSupplementary[1]:
+            let dayWidth = collectionView.bounds.width / 7.0
+            var x = collectionView.bounds.width * CGFloat(indexPath.section)
+            x += dayWidth * CGFloat(indexPath.row)
+            return CGRect(x: x,
+                          y: 0,
+                          width: dayWidth,
+                          height: weekdayViewHeight)
         default:
             return .zero
         }
@@ -115,6 +139,8 @@ extension CalendarViewController: UICollectionCustomLayoutDelegate {
             return 10
         case kindsOfSupplementary[0]:
             return 1
+        case kindsOfSupplementary[1]:
+            return 20
         default:
             return 0
         }
@@ -124,6 +150,8 @@ extension CalendarViewController: UICollectionCustomLayoutDelegate {
         switch kind {
         case kindsOfSupplementary[0]:
             return 1
+        case kindsOfSupplementary[1]:
+            return 7
         default:
             return 0
         }
@@ -131,7 +159,7 @@ extension CalendarViewController: UICollectionCustomLayoutDelegate {
     
     func numberOfSections(in collectionView: UICollectionView, ofKind kind: String) -> Int {
         switch kind {
-        case kindsOfSupplementary[0]:
+        case kindsOfSupplementary[0], kindsOfSupplementary[1]:
             return 12
         default:
             return 0
