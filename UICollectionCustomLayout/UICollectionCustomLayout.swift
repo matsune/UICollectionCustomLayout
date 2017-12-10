@@ -18,6 +18,8 @@ open class UICollectionCustomLayout: UICollectionViewLayout {
     
     private var contentSize: CGSize = .zero
     
+    private let mainKind = "UICollectionCustomLayoutMainKind"
+    
     override open func prepare() {
         guard let collectionView = collectionView, cache.isEmpty else { return }
         prepareCache()
@@ -28,11 +30,11 @@ open class UICollectionCustomLayout: UICollectionViewLayout {
             for row in 0..<collectionView.numberOfItems(inSection: section) {
                 let indexPath   = IndexPath(row: row, section: section)
                 let attributes  = UICollectionViewLayoutAttributes(forCellWith: indexPath)
-                let frame       = delegate.collectionView(collectionView, rectForCellOfKind: delegate.kindOfItem, at: indexPath)
+                let frame       = delegate.collectionView(collectionView, rectForItemCellAt: indexPath)
                 attributes.frame = frame
                 contentSize = maxContentSize(from: frame)
                 
-                cache[delegate.kindOfItem]?.updateValue(attributes, forKey: indexPath)
+                cache[mainKind]?.updateValue(attributes, forKey: indexPath)
             }
         }
         
@@ -46,7 +48,7 @@ open class UICollectionCustomLayout: UICollectionViewLayout {
                 for row in 0..<numberOfViewsInSection {
                     let indexPath = IndexPath(row: row, section: section)
                     let attributes = UICollectionViewLayoutAttributes(forSupplementaryViewOfKind: kind, with: indexPath)
-                    let frame = delegate.collectionView(collectionView, rectForCellOfKind: kind, at: indexPath)
+                    let frame = delegate.collectionView(collectionView, rectForSupplementaryViewOfKind: kind, at: indexPath)
                     attributes.frame = frame
                     
                     contentSize = maxContentSize(from: frame)
@@ -59,8 +61,9 @@ open class UICollectionCustomLayout: UICollectionViewLayout {
     }
     
     private func prepareCache() {
-        cache[delegate.kindOfItem] = [:]
-        delegate.kindsOfSupplementary.forEach { cache[$0] = [:] }
+        cache.removeAll(keepingCapacity: true)
+        cache[mainKind] = AttrDict()
+        delegate.kindsOfSupplementary.forEach { cache[$0] = AttrDict() }
     }
     
     private func updateZIndexes() {
@@ -68,7 +71,11 @@ open class UICollectionCustomLayout: UICollectionViewLayout {
         
         cache.forEach { kind, attributeDict in
             attributeDict.forEach { indexPath, attributes in
-                attributes.zIndex = delegate.collectionView(collectionView, zIndexForCellOfKind: kind, at: indexPath)
+                if kind == mainKind {
+                    attributes.zIndex = delegate.collectionView(collectionView, zIndexForItemCellat: indexPath)
+                } else {
+                    attributes.zIndex = delegate.collectionView(collectionView, zIndexForSupplementaryViewOfKind: kind, at: indexPath)
+                }
             }
         }
     }
@@ -84,7 +91,7 @@ open class UICollectionCustomLayout: UICollectionViewLayout {
     }
     
     override open func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
-        return cache[delegate.kindOfItem]?[indexPath]
+        return cache[mainKind]?[indexPath]
     }
     
     override open func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {

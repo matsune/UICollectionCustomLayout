@@ -9,11 +9,12 @@
 import Foundation
 
 public protocol UICollectionCustomLayoutDelegate: class {
-    var kindOfItem: String { get }
-    var kindsOfSupplementary: [String] { get }
+    var supplementaryKinds: [String] { get }
     
-    func collectionView(_ collectionView: UICollectionView, rectForCellOfKind kind: String, at indexPath: IndexPath) -> CGRect
-    func collectionView(_ collectionView: UICollectionView, zIndexForCellOfKind kind: String, at indexPath: IndexPath) -> Int
+    func collectionView(_ collectionView: UICollectionView, rectForItemCellAt indexPath: IndexPath) -> CGRect
+    func collectionView(_ collectionView: UICollectionView, rectForSupplementaryViewOfKind kind: String, at indexPath: IndexPath) -> CGRect
+    func collectionView(_ collectionView: UICollectionView, zIndexForItemCellat indexPath: IndexPath) -> Int
+    func collectionView(_ collectionView: UICollectionView, zIndexForSupplementaryViewOfKind kind: String, at indexPath: IndexPath) -> Int
     
     func collectionView(_ collectionView: UICollectionView, numberOfSupplementaryViewsOfKind kind: String, InSection section: Int) -> Int
     func numberOfSections(in collectionView: UICollectionView, ofKind kind: String) -> Int
@@ -24,11 +25,19 @@ extension UICollectionCustomLayoutDelegate {
         return []
     }
     
-    func collectionView(_ collectionView: UICollectionView, rectForCellOfKind kind: String, at indexPath: IndexPath) -> CGRect {
+    func collectionView(_ collectionView: UICollectionView, rectForItemCellAt indexPath: IndexPath) -> CGRect {
         return .zero
     }
 
-    func collectionView(_ collectionView: UICollectionView, zIndexForCellOfKind kind: String, at indexPath: IndexPath) -> Int {
+    func collectionView(_ collectionView: UICollectionView, rectForSupplementaryViewOfKind kind: String, at indexPath: IndexPath) -> CGRect {
+        return .zero
+    }
+
+    func collectionView(_ collectionView: UICollectionView, zIndexForItemCellat indexPath: IndexPath) -> Int {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, zIndexForSupplementaryViewOfKind kind: String, at indexPath: IndexPath) -> Int {
         return 0
     }
     
